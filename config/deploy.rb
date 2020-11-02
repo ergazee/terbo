@@ -8,7 +8,7 @@ set :repo_url, "git@github.com:ergazee/terbo.git"
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, "/home/web/terbo"
+set :deploy_to, "/home/dictator/web/terbo"
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh

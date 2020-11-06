@@ -1,6 +1,6 @@
 class CreateMicroposts < ActiveRecord::Migration[5.2]
   def change
-    create_table :microposts, : options => 'CHARSET=utf8' do |t|
+    create_table :microposts do |t|
       t.text :content
       t.references :user, foreign_key: true
 

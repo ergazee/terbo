@@ -1,0 +1,29 @@
+<% provide(:title, 'Sign up') %>
+<h1>注册新用户</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@user) do |f| %>
+
+      <%= render 'shared/error_messages', object: f.object %>
+      
+      <%= rucaptcha_input_tag(class: 'form-control', placeholder: '输入验证码，点击可更换') %>
+      <%= rucaptcha_image_tag(alt: 'Captcha') %>
+	  
+	  <p>
+      <%= f.label :name, "用户名" %>
+      <%= f.text_field :name, class: 'form-control', placeholder: '随便起个' %>
+
+      <%= f.label :email, "电子邮件" %>
+      <%= f.email_field :email, class: 'form-control', placeholder: '目前无法验证邮箱，填个假的也行' %>
+
+      <%= f.label :password, "密码" %>
+      <%= f.password_field :password, class: 'form-control', placeholder: '密码最少六位数，如123456' %>
+
+      <%= f.label :password_confirmation, "确认密码" %>
+      <%= f.password_field :password_confirmation, class: 'form-control' %>
+
+      <%= f.submit "创建账号 :)", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

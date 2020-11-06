@@ -1,62 +1,26 @@
 <!DOCTYPE html>
 <!--     
-想要编程好，脱发少不了。 by 王二嘎子
+要想编程好，脱发少不了。 by 王二嘎子
 -->
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= full_title(yield(:title)) %></title>
     <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all',
+                                              'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= render 'layouts/shim' %>
   </head>
-
   <body>
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="navbar-header">
-        <a class="navbar-brand" href="https://lmzdx.net/">同宝</a>
-        </div>
-        
-        <div class="collapse navbar-collapse" id="alignment-example">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="https://lmzdx.net/">网站首页</a></li>
-            <li><a href="https://lmzdx.net/help">网站帮助</a></li>
-            <li><a href="https://lmzdx.net/login">登录账户</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
+    <%= render 'layouts/header' %>
     <div class="container">
-      <div class="center jumbotron">
-        <h1>欢迎来到同宝</h1>
-
-        <h2>
-          <span class="red-sketch-underline">本网站为可持续发展课程第九组项目展示平台</span>
-        </h2>
-	
-        <h2>
-        如果你是同济的朋友，可以注册玩一下，这是一个简易版的闲鱼。
-        </h2>
-
-        <a class="btn btn-lg btn-success" href="https://lmzdx.net/signup">注册</a>
-      </div>
-
-      <footer class="footer">
-        <small>
-          本网站是由头发快掉光的<a href="https://weibo.com/u/6033346650">王二嘎子</a>起晚贪黑搭起来的，仅做测试使用。
-        </small>
-        <nav>
-          <ul>
-            <li><a href="https://lmzdx.net/about">关于我们</a></li>
-            <li><a href="https://lmzdx.net/contact">联系方式</a></li>
-          </ul>
-        </nav>
-      </footer>
-      </div>
-</body>  
-
-
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
+      <%= yield %>
+      <%= render 'layouts/footer' %>
+      <%= debug(params) if Rails.env.development? %>
+    </div>
+  </body>
 </html>

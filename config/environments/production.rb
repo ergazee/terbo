@@ -63,16 +63,15 @@ Rails.application.configure do
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
-  #host = 'polar-inlet-49278.herokuapp.com'
-  host = 'lmzdx.net'
+  host = '47.97.103.140'
   config.action_mailer.default_url_options = { host: host }
   ActionMailer::Base.smtp_settings = {
     :address        => 'smtp.sendcloud.net',
-    :port           => '587',
+    :port           => '80',
     :authentication => :plain,
-    :user_name      => 'liuyandong',
-    :password       => 't0singhua@',
-    :domain         => 'lmzdx.net',
+    :user_name      => 'root',
+    :password       => 'Wsg12127017.',
+    :domain         => '47.97.103.140',
     :enable_starttls_auto => true
   }
   

@@ -21,6 +21,7 @@ gem 'rucaptcha'
 gem 'ruby_identicon'
 gem 'redcarpet'                
 gem 'rouge'                  
+gem 'fog-core',                   '>= 2.1.0'
 
 group :development, :test do
   gem 'sqlite3', '>= 1.3.13'

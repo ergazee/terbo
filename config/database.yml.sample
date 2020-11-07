@@ -14,12 +14,14 @@ default: &default
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
-  password:
-  host: localhost
+  password: Wsg12127017.
+  # host: localhost
+  host: 127.0.0.1
 
 development:
   <<: *default
   database: terbo_development
+  encoding: utf8
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -50,5 +52,5 @@ test:
 production:
   <<: *default
   database: terbo_production
-  username: terbo
-  password: <%= ENV['TERBO_DATABASE_PASSWORD'] %>
+  username: root
+  password: Wsg12127017.
